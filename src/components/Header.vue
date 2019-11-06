@@ -1,5 +1,5 @@
 <template>
-    <div class="headerArea">
+    <div class="headerArea mt-10">
         <v-row no-gutters>
             <v-col cols="12" md="4">
                 <v-card>

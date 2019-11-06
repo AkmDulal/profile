@@ -5,6 +5,9 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
 
+import PerfectScrollbar from 'vue2-perfect-scrollbar'
+Vue.use(PerfectScrollbar)
+
 import vuescroll from 'vue-scroll' 
 Vue.use(vuescroll)
 

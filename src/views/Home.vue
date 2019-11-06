@@ -29,13 +29,17 @@
 				<v-col cols="12" sm="12" md="12" lg="12">
 					<h5 class="whatidong_text"> Testimonials </h5>
 					<carousel :autoplay="true" :nav="false" items="1">
-						<h3> Felicia was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. </h3>
-						<h3> Felicia was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. </h3>
-						<h3> Felicia was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. </h3>
+						<v-item v-for="testimonial in testimonials" :key="testimonial.text">
+							<div class="testimonial_cntn">
+								<v-img class="testimonial_images" :src="testimonial.img" alt=""> </v-img>
+								<h3> {{testimonial.title}} </h3>
+								<p> {{testimonial.text}} </p>
+							</div>
+						</v-item>
 					</carousel>
 				</v-col>
 			</div>
-		  </div>
+		  </div>	
         </v-col>
       </v-row>
 
@@ -54,6 +58,11 @@ export default {
 		  { img: "/images/icon-design.svg", title: "Mobile Apps Design", text: "The most modern and high-quality design made at a professional level."},
 		  { img: "/images/icon-design.svg", title: "Photography", text: "The most modern and high-quality design made at a professional level."},
 	  ],
+	  testimonials: [
+		  { img: "/images/testimonial.jpg", title: "Cliend Name", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate accusantium repellendus neque fugit sed, ipsa nobis enim pariatur aut id, dolor non ducimus architecto libero maxime! Delectus natus fuga quas, ducimus, pariatur sit est vero omnis molestiae fugit molestias corporis minus minima aspernatur odio saepe, voluptatibus dolorum quod quisquam ratione." },
+		  { img: "/images/testimonial.jpg", title: "Cliend Name", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate accusantium repellendus neque fugit sed, ipsa nobis enim pariatur aut id, dolor non ducimus architecto libero maxime! Delectus natus fuga quas, ducimus, pariatur sit est vero omnis molestiae fugit molestias corporis minus minima aspernatur odio saepe, voluptatibus dolorum quod quisquam ratione." },
+		  { img: "/images/testimonial.jpg", title: "Cliend Name", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate accusantium repellendus neque fugit sed, ipsa nobis enim pariatur aut id, dolor non ducimus architecto libero maxime! Delectus natus fuga quas, ducimus, pariatur sit est vero omnis molestiae fugit molestias corporis minus minima aspernatur odio saepe, voluptatibus dolorum quod quisquam ratione." },
+	  ]
 	  
   }),
 };
@@ -61,6 +70,35 @@ export default {
 
 
 <style scoped>
+.testimonial_cntn {
+	width: 100%;
+	float: left;
+	display: block;
+	margin-top: 40px;
+	position: relative;
+	background: #f5f8f9;
+	padding: 25px;
+	border-radius: 12px;
+}
+.testimonial_images{
+	width: 10%;
+	float: left;
+	border-radius: 20px;
+	position: absolute;
+	top: -22px;
+}
+.testimonial_cntn h3 {
+	margin-left: 83px;
+	margin-bottom: 6px;
+	font-size: 18px;
+	font-weight: 600;
+}
+element {
+	width: 10%;
+	position: absolute;
+	top: -30px;
+	border-radius: 10px;
+}
 .body_area {
 	width: 100%;
 	height: 600px;
