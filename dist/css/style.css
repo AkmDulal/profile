@@ -1,0 +1,86 @@
+/*======================================================================
+	Project Name: Print Wizard
+	Creator     : Dulal Hossain
+	Date        : Aujust/15/2019
+========================================================================*/
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap");
+body {
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  background-color: #F0F0F6;
+  color: #5F6F81;
+  font-weight: 400;
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -ms-overflow-style: scrollbar;
+  -webkit-font-smoothing: antialiased; }
+
+.baground {
+  background-image: url(../images/bg.svg), url(../images/bg_2.svg);
+  background-position: left top, right bottom;
+  background-repeat: no-repeat;
+  background-size: inherit; }
+
+/*===========@Global Styles ============*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: none; }
+
+img,
+fieldset {
+  border: 0; }
+
+figure {
+  margin: 0; }
+
+a {
+  text-decoration: none !important;
+  outline: none !important; }
+
+img {
+  max-width: 100%;
+  float: left;
+  display: block; }
+
+ul,
+li {
+  padding: 0px;
+  margin: 0px;
+  list-style: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+  .header_bg::before {
+    content: '';
+    background-image: url("../images/m_bg.svg");
+    height: 101.1%;
+    position: absolute;
+    top: 0;
+    left: -124px;
+    width: 135px;
+    z-index: -1;
+  }
+
+  .back_color {
+    background: #F0F0F6 !important;
+    background-image: url(../images/bg.svg), url(../images/bg_2.svg) !important;
+    background-position: left top, right bottom !important;
+    background-repeat: no-repeat !important;
+    background-size: inherit !important;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .headerArea {
+      display: none;
+    }
+  }
