@@ -22,7 +22,9 @@
                             </router-link>
                         </v-list>
                         <v-list>
-                        <span class="menu_text"> Portfolio </span> 
+                            <router-link to="/Portfolio">
+                                <span class="menu_text"> Portfolio </span> 
+                            </router-link>
                         </v-list>
                         <v-list>
                         <span class="menu_text"> Contact </span> 

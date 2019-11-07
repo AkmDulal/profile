@@ -79,6 +79,68 @@ p {
     background-size: inherit !important;
   }
 
+  .education_area {
+    width: 100%;
+    float: left;
+    display: block;
+    padding: 0 10px;
+  }
+  .title_are {
+    width: 100%;
+    float: left;
+    display: block;
+  }
+  .resum_icon {
+    width: auto;
+    float: left;
+    display: block !important;
+    font-size: 35px !important;
+  }
+  .rsume_title {
+    float: left;
+    font-size: 25px;
+    margin-left: 10px;
+    font-weight: 300;
+  }
+  .resume_box {
+    width: 100%;
+    float: left;
+    display: block !important;
+    padding: 30px 0;
+  }
+  .education_details {
+    width: 100%;
+    float: left;
+    display: block !important;
+    padding: 0 14px;
+  }
+  .work_date {
+    float: left;
+    font-size: 15px;
+    border: 1px solid #1a237e;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #1a237e;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .education_details p {
+    float: left;
+    width: 100%;
+    display: block;
+    padding-top: 5px;
+    margin-bottom: 0px !important;
+    font-size: 14px;
+  }
+  .skilarea {
+    margin-top: 20px;
+    float: left;
+    display: block;
+    width: 100%;
+  }
+
   @media only screen and (max-width: 600px) {
     .headerArea {
       display: none;

@@ -9,32 +9,41 @@
         </v-col>
         <v-col cols="12" sm="12" md="8" lg="8">
           <div class="body_area">
-			<v-card flat class="pages_title">
-			  <h3> My Resume </h3>
-			  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ullam architecto vel. Omnis dolor, ea nisi quos, sapiente architecto accusamus dolorum doloribus dignissimos repellat esse iure expedita delectus facere totam! </p>
-		    </v-card>
-			<div class="whatidong">
-				<v-col cols="12" sm="12" md="12" lg="12">
-					<h5 class="whatidong_text"> What I'm Doing </h5>
-				</v-col>
-				<v-row>
-					<v-col cols="12" sm="6" md="6" lg="6" v-for="skille in skilles" :key="skille">
-						<v-card flat class="skill_area">
-							<v-img class="skill_images" :src="skille.img " alt=""> </v-img>
-							<h3> {{skille.title}}  </h3>
-							<p> {{skille.text}}  </p>
-						</v-card>
-					</v-col>
-				</v-row>
-				<v-col cols="12" sm="12" md="12" lg="12">
-					<h5 class="whatidong_text"> What I'm Doing </h5>
-					<carousel :autoplay="true" :nav="false" items="1">
-						<h3> Felicia was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. </h3>
-						<h3> Felicia was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. </h3>
-						<h3> Felicia was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. </h3>
-					</carousel>
-				</v-col>
-			</div>
+			  <section class="resume_area">
+					<v-card flat class="pages_title">
+					<h3> {{resumetext.title}}  </h3>
+					</v-card>
+					<v-card class="education_area" flat>
+						<div class="title_are">
+							<v-icon class="resum_icon"> {{resumetext.icon}} </v-icon>
+							<h3 class="rsume_title">  {{resumetext.text}} </h3>					
+						</div>
+					</v-card>
+					<v-card class="education_details" flat v-for="work in works" :key="work">
+						<h2 class="work_date"> {{work.date}} </h2>
+						<p> {{work.title}}  </p>
+						<p>  {{work.name}}   </p>
+						<p>  {{work.details}}   </p>
+					</v-card>
+			  </section>
+			  <section class="resume_area skilarea">
+					<v-card class="education_area" flat>
+						<div class="title_are">
+							<v-icon class="resum_icon"> {{resumetext.icon2}} </v-icon>
+							<h3 class="rsume_title">  {{resumetext.text2}} </h3>					
+						</div>
+					</v-card>
+					<div class="education_details">
+						<v-row>
+							<v-col cols="12" md="6" lg="6" xl="6" flat v-for="skill in skills" :key="skill">
+								<v-card class="education_details" flat>
+									<h2 class="work_date"> {{skill.title}} </h2>
+									<v-progress-linear :value="skill.ddd" height="10" striped :color="skill.color"></v-progress-linear>
+								</v-card>
+							</v-col>
+						</v-row>
+					</div>
+			  </section>
 		  </div>
         </v-col>
       </v-row>
@@ -48,13 +57,31 @@ import carousel from 'vue-owl-carousel'
 export default {
   components: { carousel },
   data: () => ({
-	  skilles: [
-		  { img: "/images/icon-design.svg", title: "Web Design", text: "The most modern and high-quality design made at a professional level."},
-		  { img: "/images/icon-design.svg", title: "Web Development", text: "The most modern and high-quality design made at a professional level."},
-		  { img: "/images/icon-design.svg", title: "Mobile Apps Design", text: "The most modern and high-quality design made at a professional level."},
-		  { img: "/images/icon-design.svg", title: "Photography", text: "The most modern and high-quality design made at a professional level."},
+	  resumetext: {
+		  title: "My Resume",
+		  icon: "mdi-minus-network ",
+		  icon2: "mdi-checkerboard ",
+		  text: "PROFESSIONAL EXPERIENCE",
+		  text2: "PROFESSIONAL SKILLS",
+		  
+	  },
+	  works: [
+		  { date: "2017 - Present", title: "WEBSITE DESIGNER || DEVELOPER ", name: "WAN IT LTD", details: "Template Design, Logo Design, Banner Design (Adobe photoshop, Adobe illustrator )Font End Development (Html, Css, Sass, Bootstrap, JavaScript, Vue Js, Vuetify Js )Back End Development (PHP, JavaScripit)"  },
+		  { date: "2016 - 2017", title: "WEBSITE DESIGNER ", name: "HABIB INTELLIGENT SOFTWARE LTD.", details: "Template Design, Logo Design, Banner Design (Adobe photoshop, Adobe illustrator )Font End Development (Html, Css, Bootstrap, JavaScript)"  },
+		  { date: "2015 - 2016", title: "WEBSITE DESIGNER ", name: "SOFTECH INC. LTD .", details: "Template Design, Logo Design, Banner Design (Adobe photoshop, Adobe illustrator )Font End Development (Html, Css, Bootstrap, JavaScript)"  },
 	  ],
-	  
+	  skills: [
+		  { title: "HTML", ddd: "70",color: "deep-orange" },
+		  { title: "CSS", ddd: "70", color: "light-green darken-4" },
+		  { title: "SCSS", ddd: "60", color: "lime"  },
+		  { title: "LCSS", ddd: "70", color: "light-blue" },
+		  { title: "Vue Js", ddd: "70", color: "deep-orange" },
+		  { title: "Vuetify Js", ddd: "70", color: "light-green darken-4" },
+		  { title: "Javascript", ddd: "50", color: "lime" },
+		  { title: "PHP", ddd: "50", color: "light-blue" },
+		  { title: "Adobe Photoshop", ddd: "50",color: "deep-orange" },
+		  { title: "Adobe Illustrator", ddd: "50", color: "light-green darken-4" },
+	  ] 
   }),
 };
 </script>

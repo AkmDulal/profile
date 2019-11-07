@@ -10,12 +10,12 @@
         <v-col cols="12" sm="12" md="8" lg="8">
           <div class="body_area">
 			<v-card flat class="pages_title">
-			  <h3> About Me </h3>
-			  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ullam architecto vel. Omnis dolor, ea nisi quos, sapiente architecto accusamus dolorum doloribus dignissimos repellat esse iure expedita delectus facere totam! </p>
+			  <h3> {{abouttext.title}} </h3>
+			  <p> {{abouttext.text}} </p>
 		    </v-card>
 			<div class="whatidong">
 				<v-col cols="12" sm="12" md="12" lg="12">
-					<h5 class="whatidong_text"> What I'm Doing </h5>
+					<h5 class="whatidong_text"> {{abouttext.title2}} </h5>
 				</v-col>
 				<v-row>
 					<v-col cols="12" sm="6" md="6" lg="6" v-for="skille in skilles" :key="skille">
@@ -27,7 +27,7 @@
 					</v-col>
 				</v-row>
 				<v-col cols="12" sm="12" md="12" lg="12">
-					<h5 class="whatidong_text"> Testimonials </h5>
+					<h5 class="whatidong_text"> {{abouttext.title3}} </h5>
 					<carousel :autoplay="true" :nav="false" items="1">
 						<v-item v-for="testimonial in testimonials" :key="testimonial.text">
 							<div class="testimonial_cntn">
@@ -38,6 +38,16 @@
 						</v-item>
 					</carousel>
 				</v-col>
+				<section class="cliend_area">
+					<h5 class="whatidong_text"> {{abouttext.title4}} </h5>
+					<v-row>
+						<v-item v-for="cliend in cliends" :key="cliend">
+							<v-col cols="12" sm="6" md="3" lg="3" xl="3">
+								<v-img :src="cliend.img" alt="clend images"></v-img>
+							</v-col>
+						</v-item>
+					</v-row>
+				</section>
 			</div>
 		  </div>	
         </v-col>
@@ -52,6 +62,19 @@ import carousel from 'vue-owl-carousel'
 export default {
   components: { carousel },
   data: () => ({
+	  cliends: [
+		  { img: "/images/cliend.svg" },
+		  { img: "/images/cliend.svg" },
+		  { img: "/images/cliend.svg" },
+		  { img: "/images/cliend.svg" },
+	  ],
+	  abouttext: {
+		  title: "About Me",
+		  text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ullam architecto vel. Omnis dolor, ea nisi quos, sapiente architecto accusamus dolorum doloribus dignissimos repellat esse iure expedita delectus facere totam!",
+		  title2: " What I'm Doing ", 
+		  title3: " Testimonials  ",
+		  title4: " Clients  ",
+	  },
 	  skilles: [
 		  { img: "/images/icon-design.svg", title: "Web Design", text: "The most modern and high-quality design made at a professional level."},
 		  { img: "/images/icon-design.svg", title: "Web Development", text: "The most modern and high-quality design made at a professional level."},
