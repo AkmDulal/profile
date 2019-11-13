@@ -9,54 +9,57 @@
         </v-col>
         <v-col cols="12" sm="12" md="8" lg="8">
           <div class="body_area">
-			  <section class="resume_area">
-				  <v-row>
-					  <v-col cols="12" sm="12" md="12" lg="12">
-						<v-card flat class="pages_title">
-							<h3> {{portfoliotext.title}}  </h3>
-						</v-card>
-					  </v-col>
-				  </v-row>
-				  <v-row>
-					  <v-col cols="12" sm="12" md="4" lg="4" v-for="(n, index) in imageList" :key="index">
-						<v-card flat class="pages_title">
-							<img @click="open($event)" :src="n.url">
-						</v-card>
-					  </v-col>
-				  </v-row>
+			  <section class="resume_area skilarea">
+					<v-card class="education_area" flat>
+						<div class="title_are pages_title">
+							<v-icon class="resum_icon"> {{resumetext.icon2}} </v-icon>
+							<h3 class="rsume_title">  {{resumetext.text2}} </h3>					
+						</div>
+					</v-card>
+					<div class="education_details">
+						<v-row>
+							<v-col cols="12" md="6" lg="6" xl="6" flat v-for="protfilio in pdetils" :key="protfilio">
+								<a :href="protfilio.url">
+									<v-card class="education_details">
+										<v-img :src="protfilio.img" height="200px"></v-img>
+											<v-card-title>
+												{{protfilio.title}}
+											</v-card-title>
+											<v-card-subtitle>
+												{{protfilio.text}}
+											</v-card-subtitle>
+										</v-card>
+									</a>	
+							</v-col>
+						</v-row>
+					</div>
 			  </section>
-			  
 		  </div>
         </v-col>
       </v-row>
-
-
-
 
   </v-container>
   </div>
 </template>
 
 <script>
-import fancyBox from 'vue-fancybox';
+import carousel from 'vue-owl-carousel'
 export default {
-  components: { fancyBox },
+  components: { carousel },
   data: () => ({
-	  dialog: false,
-	  portfoliotext: {
-		  title: " My Portfolio",		  
+	  
+	  resumetext: {
+		  icon2: "mdi-checkerboard ",
+		  text2: " Portfolio",
+		  
 	  },
-	  imageList: [
-        { width: 900, height: 675, url: '/images/cliend.svg' },
-        { width: 601, height: 1024, url: '/images/cliend.svg' },
-        { width: 1024, height: 700, url: 'http://ocm0knkb1.bkt.clouddn.com/1-3.jpg' }
-      ]
+	  pdetils: [
+		  { title: "Designoble", text: "I'm a thing. But, like most politicians,", url:"https://www.designoble.com/",img: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" },
+		  { title: "Designoble", text: "I'm a thing. But, like most politicians,", url:"https://www.designoble.com/",img: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" },
+		  { title: "Designoble", text: "I'm a thing. But, like most politicians,", url:"https://www.designoble.com/",img: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" },
+		  { title: "Designoble", text: "I'm a thing. But, like most politicians,", url:"https://www.designoble.com/",img: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" },
+	  ] 
   }),
-  methods: {
-    open (e) {
-      fancyBox(e.target, this.imageList);
-    }
-  }
 };
 </script>
 

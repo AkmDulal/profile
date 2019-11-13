@@ -6,7 +6,8 @@ import store from './store'
 import vuetify from './plugins/vuetify';
 
 
-
+import carousel from 'vue-owl-carousel'
+Vue.use(carousel)
 
 import PerfectScrollbar from 'vue2-perfect-scrollbar'
 Vue.use(PerfectScrollbar)

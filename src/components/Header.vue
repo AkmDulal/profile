@@ -27,7 +27,9 @@
                             </router-link>
                         </v-list>
                         <v-list>
-                        <span class="menu_text"> Contact </span> 
+                            <router-link to="/Contact">
+                                <span class="menu_text"> Contact </span> 
+                            </router-link>
                         </v-list>
                     </v-toolbar>
                 </v-card>
