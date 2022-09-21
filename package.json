@@ -21,7 +21,7 @@
     "vue-scroll": "^2.1.12",
     "vue-smooth-scrollbar": "^0.1.2",
     "vue2-perfect-scrollbar": "^1.2.3",
-    "vuetify": "^2.1.6",
+    "vuetify": "^2.6.10",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
